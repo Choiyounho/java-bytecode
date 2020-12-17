@@ -1,6 +1,8 @@
 package com.soten;
 
-import com.sun.org.glassfish.gmbal.Description;
+import com.soten.book.Book;
+import com.soten.book.MyAnnotation;
+import com.soten.book.MyBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -70,8 +72,7 @@ class BookTest {
     }
 
     @Test
-    @DisplayName("static, 접근제어자 확인")
-    @Description("필드가 아니라도 메서드, 파라미터, 어노테이션 등 여러가지의 정보를 참조 가능")
+    @DisplayName("static, 접근제어자 확인, 필드 메서드 파라미터 어노테이션 등 여러가지 정보 참조 가능")
     void checkStaticAndAccessController() {
         Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
             int modifiers = f.getModifiers();

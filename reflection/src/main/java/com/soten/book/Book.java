@@ -1,4 +1,4 @@
-package com.soten;
+package com.soten.book;
 
 @MyAnnotation()
 public class Book {

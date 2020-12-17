@@ -1,6 +1,6 @@
-package com.soten.case2;
+package com.soten;
 
-import com.soten.Book2;
+import com.soten.book.Book2;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ class Book2Test {
     void getDefaultConstructor() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException,
             InvocationTargetException, InstantiationException {
 
-        Class<?> book2Class = Class.forName("com.soten.Book2"); // 클래스 호출
+        Class<?> book2Class = Class.forName("com.soten.book.Book2"); // 클래스 호출
         Constructor<?> constructor = book2Class.getConstructor(null); // 클래스의 디폴트 생성자 호출
         Book2 book2 = (Book2) constructor.newInstance(); // 생성자가
         System.out.println(book2);
@@ -27,7 +27,7 @@ class Book2Test {
     void getConstructor() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException,
             InvocationTargetException, InstantiationException {
 
-        Class<?> book2Class = Class.forName("com.soten.Book2");
+        Class<?> book2Class = Class.forName("com.soten.book.Book2");
         Constructor<?> constructor = book2Class.getConstructor(String.class);
         Book2 book2 = (Book2) constructor.newInstance("myBook");
         System.out.println(book2);
@@ -38,7 +38,7 @@ class Book2Test {
     void getFieldValue() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException
             , InvocationTargetException, InstantiationException, NoSuchFieldException {
 
-        Class<?> book2Class = Class.forName("com.soten.Book2");
+        Class<?> book2Class = Class.forName("com.soten.book.Book2");
         Constructor<?> constructor = book2Class.getConstructor(String.class);
         Book2 book2 = (Book2) constructor.newInstance("myBook");
         System.out.println(book2);
@@ -57,7 +57,7 @@ class Book2Test {
     @Test
     @DisplayName("메서드 가져오기")
     void getMethod() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class<?> book2Class = Class.forName("com.soten.Book2");
+        Class<?> book2Class = Class.forName("com.soten.book.Book2");
         Constructor<?> constructor = book2Class.getConstructor(String.class);
 
         Book2 book2 = (Book2) constructor.newInstance("myBook");

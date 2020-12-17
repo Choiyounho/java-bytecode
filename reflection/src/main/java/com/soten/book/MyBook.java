@@ -1,4 +1,4 @@
-package com.soten;
+package com.soten.book;
 
 @AnotherAnnotation(name = "younho")
 public class MyBook extends Book implements MyInterface {
