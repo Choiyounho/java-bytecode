@@ -100,7 +100,7 @@ class BookTest {
     void printInstanceAnnotation() {
         Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
             Arrays.stream(f.getAnnotations()).forEach(a -> {
-                if (a instanceof  MyAnnotation) {
+                if (a instanceof MyAnnotation) {
                     MyAnnotation myAnnotation = (MyAnnotation) a;
                     System.out.println(myAnnotation.name());
                     System.out.println(myAnnotation.number());
