@@ -1,0 +1,14 @@
+package com.soten;
+
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.FIELD})
+@Inherited
+public @interface AnotherAnnotation {
+
+    String name() default "yoynho";
+
+    int number() default 100;
+
+}

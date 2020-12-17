@@ -79,6 +79,34 @@ class BookTest {
             System.out.println(Modifier.isPrivate(modifiers));
             System.out.println(Modifier.isStatic(modifiers));
         });
-
     }
+
+    @Test
+    @DisplayName("@Inherited 을 이용한 어노테이션 조회")
+    void printAnnotation() {
+        Arrays.stream(MyBook.class.getAnnotations()).forEach(System.out::println);
+    }
+
+    @Test
+    @DisplayName("필드에 있는 어노테이션 출력")
+    void printMyAnnotation() {
+        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
+            Arrays.stream(f.getAnnotations()).forEach(System.out::println);
+        });
+    }
+
+    @Test
+    @DisplayName("원하는 어노테이션일 경우 출력하기")
+    void printInstanceAnnotation() {
+        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
+            Arrays.stream(f.getAnnotations()).forEach(a -> {
+                if (a instanceof  MyAnnotation) {
+                    MyAnnotation myAnnotation = (MyAnnotation) a;
+                    System.out.println(myAnnotation.name());
+                    System.out.println(myAnnotation.number());
+                }
+            });
+        });
+    }
+
 }

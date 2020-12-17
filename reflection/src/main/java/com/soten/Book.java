@@ -1,11 +1,13 @@
 package com.soten;
 
+@MyAnnotation()
 public class Book {
 
     private static String B = "BOOK";
 
     private static final String C = "BOOK";
 
+    @MyAnnotation
     private String a = "a";
 
     public String d = "c";
